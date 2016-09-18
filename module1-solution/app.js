@@ -7,23 +7,21 @@
 
   function LunchCheckController ($scope) {
     $scope.list = "";
+    $scope.message = "";
 
     $scope.checkAmount = function () {
       if ($scope.list.length == 0) {
-        $scope.list = "Please enter data first";
+        $scope.message = "Please enter data first";
       }
       else {
         if ($scope.list.split(',').length < 4) {
-          $scope.list = "Enjoy!";
+          $scope.message = "Enjoy!";
         }
         else {
-          $scope.list = "Too much!";
+          $scope.message = "Too much!";
         }
       }
 
-      $scope.clearText = function() {
-        $scope.list = "";
-      }
     };
   }
 
