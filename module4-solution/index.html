@@ -1,32 +1,23 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html ng-app='MenuCategoriesApp'>
   <head>
-    <title>Restaurant At the End of the Earth</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/styles.css"> -->
-    <script src="angular.min.js"></script>
-    <script src="angular-ui-router.min.js"></script>
-    <script src="app.js"></script>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+    <title>Using $http Service</title>
   </head>
+  <body ng-app="MenuApp">
+    <h1>Using $http Service</h1>
 
-<body ng-app="NarrowItDownApp">
-   <div class="container" ng-controller="NarrowItDownController as narrow">
-    <h1>Narrow Down Your Chinese Menu Choice</h1>
-
-    <div class="form-group">
-      <input type="text" placeholder="search term" class="form-control" ng-model="narrow.searchTerm">
+    <div ng-controller='MenuCategoriesController as menu'>
+      <h3>List of Menu Categories</h3>
+      <ul>
+        <li ng-repeat="category in menu.categories">
+          (<a href="" ng-click="menu.logMenuItems(category.short_name);">{{ category.short_name }}</a>)
+          {{ category.name }}
+        </li>
+      </ul>
     </div>
-    <div class="form-group narrow-button">
-      <button class="btn btn-primary" ng-click="narrow.getItems();">Narrow It Down For Me!</button>
-    </div>
-
-    <!-- Bonus loader (see Bonus section of the assignment) -->
-    <items-loader-indicator></items-loader-indicator>
-
-    <!-- found-items should be implemented as a component -->
-    <found-items found-items="narrow.found" on-remove="narrow.removeItem(index)" show-error="narrow.showError"></found-items>
-  </div>
-
-</body>
+  </body>
 </html>

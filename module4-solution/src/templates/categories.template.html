@@ -1,0 +1,6 @@
+<h3>Title: {{ $ctrl.myTitle }}</h3>
+<ol>
+  <li ng-repeat="category in $ctrl.categories">
+    {{ category.name }} ({{ category.short_name}})
+  </li>
+</ol>
