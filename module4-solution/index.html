@@ -1,23 +1,33 @@
 <!DOCTYPE html>
-<html ng-app='MenuCategoriesApp'>
+<html ng-app='MenuApp'>
   <head>
     <meta charset="utf-8">
     <!-- <link rel="stylesheet" href="styles.css"> -->
+
+    <!-- Libraries -->
     <script src="lib/angular.min.js"></script>
     <script src="lib/angular-ui-router.min.js"></script>
-    <title>Using $http Service</title>
-  </head>
-  <body ng-app="MenuApp">
-    <h1>Using $http Service</h1>
 
-    <div ng-controller='MenuCategoriesController as menu'>
-      <h3>List of Menu Categories</h3>
-      <ul>
-        <li ng-repeat="category in menu.categories">
-          (<a href="" ng-click="menu.logMenuItems(category.short_name);">{{ category.short_name }}</a>)
-          {{ category.name }}
-        </li>
-      </ul>
-    </div>
+    <!-- Module -->
+    <script src="src/menuapp.module.js"></script>
+    <script src="src/data.module.js"></script>
+
+    <!-- Controller -->
+    <script src="src/categories.component.controller.js"></script>
+
+    <!-- Service -->
+    <script src="src/menudata.service.js"></script>
+
+    <!-- Components -->
+    <script src="src/categories.component.js"></script>
+    <script src="src/items.component.js"></script>
+
+    <!-- Routes -->
+    <script src="src/routes.js"></script>
+
+    <title>Restaurant at the Ends of the Earth</title>
+  </head>
+  <body>
+    <ui-view></ui-view>
   </body>
 </html>
