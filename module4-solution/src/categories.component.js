@@ -2,12 +2,11 @@
   'use strict';
 
   angular.module('Data')
-  .component('categories', {
-      templateUrl: 'src/templates/categories.template.html',
-      // controller: CategoriesComponentController,
-      bindings: {
-        categoryItems: '<'
-      }
+  .component('categoryList', {
+    templateUrl: 'src/templates/category.list.template.html',
+    bindings: {
+      items: '<'
+    }
   });
 
 })();
