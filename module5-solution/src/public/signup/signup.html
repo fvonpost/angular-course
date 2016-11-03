@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="css/signup.css">
+
+<div class="signupform">
+  <div class="container">
+    <h2 class="text-center">Sign up for our newsletter!</h2>
+
+    <div class="text-center">
+      <fieldset>
+        <legend>Sign up</legend>
+          <form name="signupForm" novalidate>
+
+            <input type="text" name="firstname" placeholder="First name">
+            <!-- <input type="text" name="firstname" placeholder="First name"
+              ng-model="signupCtrl.user.firstname"
+              required
+              minlength="1">
+              {{ signupCtrl.user.firstname }}
+              <span ng-if="signupForm.firstname.$error.minlength && signupForm.firstname.$touched">
+                First name must be at least 1 character long
+              </span>
+              <br> -->
+
+            <!-- <input type="text" name="lastname" placeholder="Last name"
+              ng-model="signupCtrl.user.lastname"
+              required
+              minlength="1">
+              {{ signupCtrl.user.lastname }}
+              <span ng-if="signupForm.lastname.$error.minlength && signupForm.lastname.$touched">
+                Last name must be at least 1 character long
+              </span>
+              <br>
+
+            <input type="email" name="email" placeholder="Email"
+              ng-model="signupCtrl.user.email"
+              required>
+              <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+                Must be a valid email address: handle@domain format
+              </span>
+              <br>
+
+            <input type="text" name="phone" placeholder="Phone ###-###-####"
+              ng-model="signupCtrl.user.phone"
+              pattern="(\d{3})-(\d{3})-(\d{4})">
+              <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+                Phone must be in the format ###-###-####.
+              </span>
+              <br> -->
+
+            <button class="submitbutton"
+              ng-disabled="signupForm.$invalid"
+              ng-click="signupCtrl.submit()">
+              Submit
+            </button>
+          </form>
+     </fieldset>
+   </div>
+ </div>
+</div>
