@@ -1,6 +1,6 @@
-.signupform.container {
+.signupform .container {
   color: #000;
 }
-.signupform.container.submitbutton{
+.signupform .container .submitbutton {
   background-color: #777;
 }

@@ -1,9 +1,12 @@
 (function () {
+"use strict";
 
 angular.module('public')
 .controller('SignupController', SignupController);
 
-function SignupController() {
+SignupController.$inject = ['MenuService'];
+
+function SignupController(MenuService) {
   var signupCtrl = this;
 
   signupCtrl.user = {
@@ -11,11 +14,25 @@ function SignupController() {
     lastname: '',
     email: '',
     phone: '',
-    favorite: ''
+    favorite: '',
+    valid: false,
+    registered: false
   };
 
   signupCtrl.submit = function () {
-    console.log("Submitted data:" + signupCtrl.user);
+    signupCtrl.user.favorite = signupCtrl.user.favorite.toUpperCase();
+    MenuService.getMenuItem(signupCtrl.user.favorite).then(function(result) {
+      if (result != undefined) {
+        signupCtrl.user.valid = true;
+        signupCtrl.user.registered = true;
+        MenuService.storeMyInfo(signupCtrl.user);
+      }
+      else {
+        signupCtrl.user.valid = false;
+      }
+    }).catch(function(error) {
+      signupCtrl.user.valid = false;
+    })
   };
 }
 
